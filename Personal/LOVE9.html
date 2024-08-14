@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slideshow with Captions and Audio</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .bg {
+            position: absolute;
+            top: 60%;
+            left: 60%;
+            width: 400px;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        .show {
+            display: block;
+        }
+
+        .display-4 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            color: #fff;
+        }
+
+        .reasons-list {
+            list-style-type: none;
+            padding: 0;
+            text-align: left;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .reasons-list .list-group-item {
+            border: none;
+            margin-bottom: 5px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            background-color: rgba(254, 246, 246, 0.8);
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+            color: #333;
+        }
+
+        /* Slideshow styles */
+        .slideshow-container {
+            position: relative;
+            max-width: 100%;
+            margin: auto;
+            z-index: 2;
+        }
+
+        .slideshow-container img, .slideshow-container video {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .slideshow-container .mySlides {
+            display: none;
+        }
+
+        .slideshow-container .active {
+            display: block;
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            z-index: 3;
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .prev {
+            left: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .text {
+            color: #ffffff;
+            font-size: 25px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .display-4 {
+                font-size: 2rem;
+            }
+
+            .reasons-list .list-group-item {
+                font-size: 14px;
+            }
+
+            .heart {
+                width: 40px;
+            }
+
+            .button {
+                font-size: 0.9rem;
+                padding: 8px 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .display-4 {
+                font-size: 1.75rem;
+            }
+            
+            .bg {
+                position: absolute;
+                top: 70%;
+                left: 80%;
+                width: 150px;
+                object-fit: cover;
+                z-index: 1;
+            }
+
+            .reasons-list .list-group-item {
+                font-size: 12px;
+            }
+
+            .heart {
+                width: 30px;
+            }
+
+            .button {
+                font-size: 0.8rem;
+                padding: 6px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container-card">
+        <nav>
+            <a href="/LOVE.html">Home</a>
+            <div class="dropdown">
+                <a href="#" class="dropbtn">Reasons</a>
+                <div class="dropdown-content">
+                    <a href="/LOVE4.html">Page 1</a>
+                    <a href="/LOVE5.html">Page 2</a>
+                    <a href="/LOVE6.html">Page 3</a>
+                    <a href="/LOVE7.html">Page 4</a>
+                </div>
+            </div>
+            <a href="LOVE9.html">Gallery</a>
+            <a href="LOVE10.html">End</a>
+        </nav>
+        <img src="/heart.jpg" alt="heart" class="heart top-left">
+        <div class="content">
+            <h1 class="display-4 animate-text">101 Reasons Why I Love You</h1>
+
+            <div class="slideshow-container">
+                <div class="mySlides">
+                    <img src="/1.jpg" alt="Slide 1">
+                    <div class="text">My hot man!!.</div>
+                </div>
+
+                <div class="mySlides">
+                    <img src="/4.jpg" alt="Slide 2">
+                    <div class="text">100% Steeze!.</div>
+                </div>
+
+                <div class="mySlides">
+                    <img src="/WhatsApp Image 2024-08-13 at 07.38.41_40100d9d.jpg" alt="Slide 3">
+                    <div class="text">The absolute love of my life.</div>
+                </div>
+
+                <div class="mySlides">
+                    <video src="/WhatsApp Video 2024-08-13 at 07.35.50_91c18223.mp4" controls></video>
+                    <div class="text">Always sleeping.</div>
+                </div>
+                
+                <div class="mySlides">
+                    <video src="/2.mp4" controls></video>
+                    <div class="text"></div>
+                </div>
+
+                <div class="mySlides">
+                    <video src="/3.mp4" controls></video>
+                    <div class="text"></div>
+                </div>
+
+                <div class="mySlides">
+                    <video src="/4.mp4" controls></video>
+                    <div class="text"></div>
+                </div>
+
+                <div class="mySlides">
+                    <img src="/5.jpg" alt="Slide 3">
+                    <div class="text"></div>
+                </div>
+
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+
+            <button class="button" onclick="goToPreviousPage()">Previous Page</button>
+            <button class="button" onclick="goToNextPage()">Next Page</button>
+        </div>
+        <img src="/heart.jpg" alt="heart" class="heart bottom-right">
+    </div>
+
+    <audio id="backgroundAudio" src="/Psquare - Made with Clipchamp.mp3" autoplay loop></audio>
+
+    <script>
+            let slideIndex = 0;
+
+function showSlides() {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}
+
+    let currentSlide = slides[slideIndex-1];
+    currentSlide.style.display = "block";
+
+    if (currentSlide.querySelector("video")) {
+        let video = currentSlide.querySelector("video");
+        video.onended = function() {
+            showSlides();
+        };
+        video.play();
+    } else {
+        setTimeout(showSlides, 5000); 
+    }
+}
+
+showSlides();
+
+function plusSlides(n) {
+    slideIndex += n - 1; 
+    showSlides();
+}
+
+function goToNextPage() {
+    window.location.href = '/LOVE10.html'; 
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const dropdownBtn = document.querySelector('.dropbtn');
+    const dropdownContent = document.querySelector('.dropdown-content');
+
+    dropdownBtn.addEventListener('click', function(event) {
+        event.stopPropagation();
+        dropdownContent.classList.toggle('show');
+    });
+
+    document.addEventListener('click', function(event) {
+        if (!dropdownContent.contains(event.target) && !dropdownBtn.contains(event.target)) {
+            dropdownContent.classList.remove('show');
+        }
+    });
+});
+
+function goToPreviousPage() {
+    window.location.href = '/LOVE7.html'; 
+}
+
+    </script>
+</body>
+</html>

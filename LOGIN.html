@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            background: url('your-background-image.jpg') no-repeat center center fixed;
+            background-size: cover;
+            background-color: rgb(184, 97, 97);
+            font-family: 'Arial', sans-serif;
+            height: 100%;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .login-container {
+            background: rgb(255, 255, 255);
+            padding: 20px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+            position: absolute;
+            top: 10%;
+            animation: bounce 2s infinite ease-in-out;
+        }
+
+        .login-container h1 {
+            font-size: 2em;
+            color: #d9534f;
+            margin-bottom: 20px;
+        }
+
+        .login-container input {
+            width: calc(100% - 40px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            font-size: 1em;
+            outline: none;
+        }
+
+        .login-container .button {
+            padding: 15px 30px;
+            background-color: #d9534f;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+            width: 100%;
+        }
+
+        .login-container .button:hover {
+            background-color: #c9302c;
+        }
+
+        #error-message {
+            color: red;
+            display: none;
+            margin-top: 10px;
+        }
+
+        #password-hint {
+            color: #555;
+            font-size: 0.9em;
+            display: none;
+            margin-top: 10px;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-50px);
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .login-container {
+                max-width: 70%;
+                top: 20%;
+            }
+
+            .login-container h1 {
+                font-size: 1.8em;
+            }
+
+            .login-container input {
+                font-size: 0.95em;
+            }
+
+            .login-container .button {
+                font-size: 0.95em;
+                padding: 14px 28px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .login-container {
+                max-width: 80%;
+                top: 20%;
+            }
+
+            .login-container h1 {
+                font-size: 1.5em;
+            }
+
+            .login-container input {
+                font-size: 0.9em;
+            }
+
+            .login-container .button {
+                font-size: 0.9em;
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container" onclick="stopBounce()">
+        <h1>Login</h1>
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <button class="button" onclick="login()">Login</button>
+        <p id="error-message">Invalid username or password</p>
+        <p id="password-hint">Hint: Graduation/Anniversary</p>
+    </div>
+
+    <script>
+        function stopBounce() {
+            const loginContainer = document.querySelector('.login-container');
+            loginContainer.style.animation = 'none';
+            loginContainer.style.top = '50%';
+            loginContainer.style.transform = 'translateY(-50%)';
+        }
+
+        function login() {
+            const username = document.getElementById('username').value.toLowerCase();
+            const password = document.getElementById('password').value;
+
+            if ((username === 'toafik' || username === 'gloria') && password === '22072017') {
+                const capitalizedUsername = username.charAt(0).toUpperCase() + username.slice(1);
+                window.location.href = `/LOVE.html?username=${capitalizedUsername}`;
+            } else {
+                document.getElementById('error-message').style.display = 'block';
+                document.getElementById('password-hint').style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>

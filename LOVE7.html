@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .container-card {
+            min-height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bg {
+            position: absolute;
+            top: 60%;
+            left: 60%;
+            width: 400px;
+            object-fit: cover;
+        }
+        
+        .show {
+            display: block !important;
+        }
+
+        .display-4 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            color: #fff;
+        }
+
+        .reasons-list {
+            list-style-type: none;
+            padding: 0;
+            text-align: left;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .reasons-list .list-group-item {
+            border: none;
+            margin-bottom: 5px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            background-color: rgba(254, 246, 246, 0.8);
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+            color: #333;
+            font-weight: 600;
+        }
+        .final{
+            font-weight: 900;
+        }
+        
+    
+            
+        @media (max-width: 768px) {
+            .display-4 {
+                font-size: 2rem;
+            }
+
+            .reasons-list .list-group-item {
+                font-size: 12px;
+            }
+
+            .heart {
+                width: 40px;
+            }
+
+            .button {
+                font-size: 0.9rem;
+                padding: 8px 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .display-4 {
+                font-size: 1.75rem;
+            }
+            
+            .bg {
+                position: absolute;
+                top: 70%;
+                left: 80%;
+                width: 150px;
+                object-fit: cover;
+                z-index: 1;
+            }
+            .reasons-list .list-group-item {
+                font-size: 10.2px;
+            }
+
+            .heart {
+                width: 30px;
+            }
+
+            .button {
+                font-size: 0.8rem;
+                padding: 6px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container-card">
+        <nav>
+            <a href="/LOVE.html">Home</a>
+            <div class="dropdown">
+                <a href="#" class="dropbtn">Reasons</a>
+                <div class="dropdown-content">
+                    <a href="/LOVE4.html">Page 1</a>
+                    <a href="/LOVE5.html">Page 2</a>
+                    <a href="/LOVE6.html">Page 3</a>
+                    <a href="/LOVE7.html">Page 4</a>
+                    <a href="/LOVE8.html">Page 5</a>
+                </div>
+            </div>
+            <a href="LOVE9.html">Gallery</a>
+            <a href="LOVE10.html">End</a>
+        </nav>
+        <img src="/heart.jpg" alt="heart" class="heart top-left">
+        <div class="content">
+            <h1 class="display-4 animate-text">101 Reasons Why I Love You</h1>
+            <ul class="list-group text-start mt-5 reasons-list">
+                <li class="list-group-item">76. You never judge me.</li>
+                <li class="list-group-item">77. You’re incredibly creative.</li>
+                <li class="list-group-item">78. I love how you embrace my flaws and make me <br>feel perfect just as I am.</li>
+                <li class="list-group-item">79. I love how you bring warmth and joy to every room you enter.</li>
+                <li class="list-group-item">80. You make me laugh until I cry.</li>
+                <li class="list-group-item">81. You have a way of making everything okay.</li>
+                <li class="list-group-item">82. You’re so genuine.</li>
+                <li class="list-group-item">83. You’re incredibly empathetic.</li>
+                <li class="list-group-item">84. You make my pulse quicken with just a look.</li>
+                <li class="list-group-item">85. You see beauty in places others often overlook</li>
+                <li class="list-group-item">86. I love how you take the time to understand <br> what truly makes me happy.</li>
+                <li class="list-group-item">87. You always know how to satisfy my needs.</li>
+                <li class="list-group-item">88. You are the most considerate person I know.</li>
+                <li class="list-group-item">89. You make me feel valued.</li>
+                <li class="list-group-item">90. You make me weak in the knees.</li>
+                <li class="list-group-item">91. Your hugs feel like home to me </li>
+                <li class="list-group-item">92. You are always so calm and collected.</li>
+                <li class="list-group-item">93. Your random compliments always brighten my day.</li>
+                <li class="list-group-item">94. You have an amazing personality.</li>
+                <li class="list-group-item">95. You are my constant source of happiness.</li>
+                <li class="list-group-item">96. You’re my perfect sunset</li>
+                <li class="list-group-item">97. You always put others before yourself.</li>
+                <li class="list-group-item">98. You make me feel appreciated.</li>
+                <li class="list-group-item">99. You are my safe haven.</li>
+                <li class="list-group-item">100. You’re great at multitasking (only in the bedroom).</li>
+                <li class="list-group-item"><div class="final">
+                    101.You're My Everything, My Love, My Life, My Forever.</div></li>
+            </ul>
+            <button class="button" onclick="goToPreviousPage()">Previous Page</button>
+            <button class="button" onclick="goToNextPage()">Next Page</button>
+        </div>
+        <img src="/bg.jpg" alt="love" class="bg">
+        <img src="/heart.jpg" alt="heart" class="heart bottom-right">
+    </div>
+    <script>
+        function goToNextPage() {
+            window.location.href = '/LOVE9.html'; 
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+    const dropdownBtn = document.querySelector('.dropbtn');
+    const dropdownContent = document.querySelector('.dropdown-content');
+
+    dropdownBtn.addEventListener('click', function(event) {
+        event.stopPropagation();
+        dropdownContent.classList.toggle('show');
+    });
+
+    document.addEventListener('click', function(event) {
+        if (!dropdownContent.contains(event.target) && !dropdownBtn.contains(event.target)) {
+            dropdownContent.classList.remove('show');
+        }
+    });
+});
+
+function goToPreviousPage() {
+            window.location.href = '/LOVE6.html'; 
+        }
+    </script>
+</body>
+</html>

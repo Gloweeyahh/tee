@@ -225,9 +225,7 @@
         </div>
         <img src="heart.jpg" alt="heart" class="heart bottom-right">
     </div>
-
-    <audio id="backgroundAudio" src="Psquare - Made with Clipchamp.mp3" autoplay loop></audio>
-
+    
     <script>
             let slideIndex = 0;
 
@@ -245,10 +243,10 @@ function showSlides() {
 
     if (currentSlide.querySelector("video")) {
         let video = currentSlide.querySelector("video");
+        video.play();
         video.onended = function() {
             showSlides();
         };
-        video.play();
     } else {
         setTimeout(showSlides, 5000); 
     }

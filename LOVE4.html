@@ -21,7 +21,7 @@
         }
         
         .show {
-            display: block !important;
+            display: block;
         }
 
         .display-4 {
@@ -104,21 +104,20 @@
 <body>
     <div class="container-card">
         <nav>
-            <a href="/LOVE.html">Home</a>
+ <a href="LOVE.html">Home</a>
             <div class="dropdown">
                 <a href="#" class="dropbtn">Reasons</a>
                 <div class="dropdown-content">
-                    <a href="/LOVE4.html">Page 1</a>
-                    <a href="/LOVE5.html">Page 2</a>
-                    <a href="/LOVE6.html">Page 3</a>
-                    <a href="/LOVE7.html">Page 4</a>
-                    <a href="/LOVE8.html">Page 5</a>
+                    <a href="LOVE4.html">Page 1</a>
+                    <a href="LOVE5.html">Page 2</a>
+                    <a href="LOVE6.html">Page 3</a>
+                    <a href="LOVE7.html">Page 4</a>
                 </div>
             </div>
             <a href="LOVE9.html">Gallery</a>
             <a href="LOVE10.html">End</a>
         </nav>
-        <img src="/heart.jpg" alt="heart" class="heart top-left">
+        <img src="heart.jpg" alt="heart" class="heart top-left">
         <div class="content">
             <h1 class="display-4 animate-text">101 Reasons Why I Love You</h1>
             <ul class="list-group text-start mt-5 reasons-list">
@@ -126,14 +125,14 @@
                 <li class="list-group-item">2. You support me in everything I do.</li>
                 <li class="list-group-item">3. You always make me laugh.</li>
                 <li class="list-group-item">4. You have the most beautiful smile.</li>
-                <li class="list-group-item">5. You listen to me, even when I’m rambling.</li>
+                <li class="list-group-item">5. You listen to me, even when I’m just rambling.</li>
                 <li class="list-group-item">6. You are so caring.</li>
                 <li class="list-group-item">7. You have an okay sense of humor🙃.</li>
                 <li class="list-group-item">8. You’re always there when I need you.</li>
-                <li class="list-group-item">9. You make me feel special on most days.</li>
+                <li class="list-group-item">9. You make me feel special.</li>
                 <li class="list-group-item">10. You know exactly how to cheer me up.</li>
                 <li class="list-group-item">11. You are incredibly smart.</li>
-                <li class="list-group-item">12. You're the only person who makes me smile like an idiot.</li>
+                <li class="list-group-item">12. You feed me😂.</li>
                 <li class="list-group-item">13. You give the best hugs.</li>
                 <li class="list-group-item">14. You are so ambitious.</li>
                 <li class="list-group-item">15. You inspire me to be a better person.</li>
@@ -141,22 +140,22 @@
                 <li class="list-group-item">17. You're my favorite part of every day.</li>
                 <li class="list-group-item">18. No one else makes me this happy.</li>
                 <li class="list-group-item">19. You’re so passionate about what you do.</li>
-                <li class="list-group-item">20. You’re incredibly generous.</li>
+                <li class="list-group-item">20. You’re incredibly generous (incredibly!).</li>
                 <li class="list-group-item">21. You are so handsome.</li>
                 <li class="list-group-item">22. You make me feel safe.</li>
                 <li class="list-group-item">23. You’re my best memory one I can’t wait to make more of.</li>
                 <li class="list-group-item">24. You have a contagious laugh.</li>
-                <li class="list-group-item">25. You feed me😂.</li>
+                <li class="list-group-item">25. You're the only person who makes me smile like an idiot.</li>
             </ul>
             <button class="button" onclick="goToPreviousPage()">Previous Page</button>
             <button class="button" onclick="goToNextPage()">Next Page</button>
         </div>
-        <img src="/bg.jpg" alt="love" class="bg">
-        <img src="/heart.jpg" alt="heart" class="heart bottom-right">
+        <img src="bg.jpg" alt="love" class="bg">
+        <img src="heart.jpg" alt="heart" class="heart bottom-right">
     </div>
     <script>
         function goToNextPage() {
-            window.location.href = '/LOVE5.html'; 
+            location = 'LOVE5.html'; 
         }
         document.addEventListener('DOMContentLoaded', function() {
     const dropdownBtn = document.querySelector('.dropbtn');
@@ -175,7 +174,7 @@
 });
 
 function goToPreviousPage() {
-            window.location.href = '/LOVE2.html'; 
+            location = 'LOVE2.html'; 
         }
     </script>
 </body>

@@ -47,7 +47,7 @@
             color: #333;
         }
 
-        /* Slideshow styles */
+       
         .slideshow-container {
             position: relative;
             max-width: 100%;
@@ -105,21 +105,10 @@
             font-weight: 600;
         }
 
-        .slideshow-container img, .slideshow-container video {
-            width: 100%;
-            height: 400px;
-            object-fit: cover; 
-            border-radius: 10px;
+        .slideshow-container video {
+            playsinline: true;
         }
 
-        
-        .slideshow-container {
-            height: 400px; 
-            margin: auto;
-            overflow: hidden; 
-            position: relative;
-            max-width: 100%;
-        }
 
 
         @media (max-width: 768px) {
@@ -209,22 +198,22 @@
                 </div>
 
                 <div class="mySlides">
-                    <video src="WhatsApp Video 2024-08-13 at 07.35.50_91c18223.mp4" controls></video>
+                    <video src="WhatsApp Video 2024-08-13 at 07.35.50_91c18223.mp4" controls playsinline></video>
                     <div class="text">Always sleeping😂.</div>
                 </div>
                 
                 <div class="mySlides">
-                    <video src="2.mp4" controls></video>
+                    <video src="2.mp4" controls playsinline></video>
                     <div class="text"></div>
                 </div>
 
                 <div class="mySlides">
-                    <video src="3.mp4" controls></video>
+                    <video src="3.mp4" controls playsinline></video>
                     <div class="text"></div>
                 </div>
 
                 <div class="mySlides">
-                    <video src="4.mp4" controls></video>
+                    <video src="4.mp4" controls playsinline></video>
                     <div class="text">I liked this headband🙂</div>
                 </div>
 
@@ -260,12 +249,12 @@ function showSlides() {
     let currentSlide = slides[slideIndex-1];
     currentSlide.style.display = "block";
 
-    if (currentSlide.querySelector("video")) {
-        let video = currentSlide.querySelector("video");
-        video.play();
-        video.onended = function() {
-            showSlides();
-        };
+    let video = currentSlide.querySelector("video");
+    if (video) {
+        video.play().catch(error => {
+            
+            video.controls = true;
+        });
     } else {
         setTimeout(showSlides, 5000); 
     }

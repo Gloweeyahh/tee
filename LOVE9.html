@@ -105,6 +105,23 @@
             font-weight: 600;
         }
 
+        .slideshow-container img, .slideshow-container video {
+            width: 100%;
+            height: 400px;
+            object-fit: cover; 
+            border-radius: 10px;
+        }
+
+        
+        .slideshow-container {
+            height: 400px; 
+            margin: auto;
+            overflow: hidden; 
+            position: relative;
+            max-width: 100%;
+        }
+
+
         @media (max-width: 768px) {
             .display-4 {
                 font-size: 2rem;
@@ -188,7 +205,7 @@
 
                 <div class="mySlides">
                     <img src="WhatsApp Image 2024-08-13 at 07.38.41_40100d9d.jpg" alt="Slide 3">
-                    <div class="text">The absolute love of my life</div>
+                    <div class="text"> Love of my life</div>
                 </div>
 
                 <div class="mySlides">
@@ -225,7 +242,9 @@
         </div>
         <img src="heart.jpg" alt="heart" class="heart bottom-right">
     </div>
-    
+
+    <audio id="backgroundAudio" src="Psquare - Made with Clipchamp.mp3" autoplay loop></audio>
+
     <script>
             let slideIndex = 0;
 

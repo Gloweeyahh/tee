@@ -123,33 +123,30 @@
     </style>
 </head>
 <body>
-    <div class="login-container" onclick="stopBounce()">
+    <div class="login-container">
         <h1>Login</h1>
-        <input type="text" id="username" placeholder="Username">
-        <input type="password" id="password" placeholder="Password">
-        <button class="button" onclick="login()">Login</button>
-        <p id="error-message">Invalid username or password</p>
-        <p id="password-hint">Hint: Graduation/Anniversary (ddmmyyyy)</p>
+        <form onsubmit="return login()">
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button type="submit" class="button">Login</button>
+            <p id="error-message">Invalid username or password</p>
+            <p id="password-hint">Hint: Graduation/Anniversary</p>
+        </form>
     </div>
 
     <script>
-        function stopBounce() {
-            const loginContainer = document.querySelector('.login-container');
-            loginContainer.style.animation = 'none';
-            loginContainer.style.top = '50%';
-            loginContainer.style.transform = 'translateY(-50%)';
-        }
-
         function login() {
             const username = document.getElementById('username').value.toLowerCase();
             const password = document.getElementById('password').value;
 
             if ((username === 'toafik' || username === 'gloria') && password === '22072017') {
                 const capitalizedUsername = username.charAt(0).toUpperCase() + username.slice(1);
-                location = `LOVE.html?username=${capitalizedUsername}`;
+                window.location.href = `/LOVE.html?username=${capitalizedUsername}`;
+                return false; // Prevent form submission
             } else {
                 document.getElementById('error-message').style.display = 'block';
                 document.getElementById('password-hint').style.display = 'block';
+                return false; // Prevent form submission
             }
         }
     </script>

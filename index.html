@@ -141,7 +141,7 @@
 
             if ((username === 'toafik' || username === 'gloria') && password === '22072017') {
                 const capitalizedUsername = username.charAt(0).toUpperCase() + username.slice(1);
-                window.location.href = `LOVE.html?username=${capitalizedUsername}`;
+                location = `LOVE.html?username=${capitalizedUsername}`;
                 return false; 
             } else {
                 document.getElementById('error-message').style.display = 'block';

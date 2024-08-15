@@ -141,12 +141,12 @@
 
             if ((username === 'toafik' || username === 'gloria') && password === '22072017') {
                 const capitalizedUsername = username.charAt(0).toUpperCase() + username.slice(1);
-                window.location.href = `/LOVE.html?username=${capitalizedUsername}`;
-                return false; // Prevent form submission
+                window.location.href = `LOVE.html?username=${capitalizedUsername}`;
+                return false; 
             } else {
                 document.getElementById('error-message').style.display = 'block';
                 document.getElementById('password-hint').style.display = 'block';
-                return false; // Prevent form submission
+                return false; 
             }
         }
     </script>
